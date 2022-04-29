@@ -1,0 +1,22 @@
+body {
+    background-color: #f0c9e9;
+    font-family: "cursive";
+    margin: 10px;
+    color: #d62f6a;
+  }
+
+  h1 {
+    color: #d62f6a;
+    padding: 5px;
+    font-family: "cursive";
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    color:#ffffff;
+    text-align: center;
+  }
