@@ -5,6 +5,7 @@
       <link rel="stylesheet" href="style1.css">
         <style>
             canvas{ background: #eee; display: block; margin: 0 auto; }
+           
             #para1 {
             text-align: left;
             color: #b204d1;
@@ -27,6 +28,7 @@
             }
         </style>
     </head>
+   
     <body>
       <h1>Fruit Ninja</h1>
       <p id="para4">Slash the fruit to gain points! You'll lose points if a fruit falls, and you'll lose a life if you accidently slash a bomb.</p>
@@ -36,31 +38,33 @@
       </h2>
         <p id ="para2">Difficulty Level:</p>
         <p id="para3">Timer:</p>
-       <canvas id="myCanvas" width="480" height="320"></canvas>
-        <script>
-          var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    var x = canvas.width/2;
-    var y = canvas.height-30;
-    var dx = 2;
-    var dy = -2;
+       
+      <canvas id="myCanvas" width="480" height="320"></canvas>
+      <script>
+        // setup
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var x = canvas.width/2;
+        var y = canvas.height-30;
+        var dx = 2;
+        var dy = -2;
 
-    function drawBall() {
-        ctx.beginPath();
-        ctx.arc(x, y, 10, 0, Math.PI*2);
-        ctx.fillStyle = "#0095DD";
-        ctx.fill();
-        ctx.closePath();
-    }
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(x, y, 10, 0, Math.PI*2);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
 
-    function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawBall();
-        x += dx;
-        y += dy;
-    }
-    
-    setInterval(draw, 10);
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            x += dx;
+            y += dy;
+        }
+
+        setInterval(draw, 10);
         </script>
      </body>
 </html>
