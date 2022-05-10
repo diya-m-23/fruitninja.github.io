@@ -52,6 +52,7 @@
         function drawBall() {
             ctx.beginPath();
             ctx.arc(x, y, 30, 0, Math.PI*4);
+            if (y > 280) {dy=2;}
             ctx.fillStyle = "#0095DD";
             ctx.fill();
             ctx.closePath();
