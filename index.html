@@ -39,12 +39,12 @@
         <p id ="para2">Difficulty Level:</p>
         <p id="para3">Timer:</p>
        
-      <canvas id="myCanvas" width="480" height="320"></canvas>
+      <canvas id="myCanvas" width="700" height="395"></canvas>
       <script>
         // setup
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
-        var x = Math.floor(Math.random() * 420);
+        var x = Math.floor(Math.random() * 650);
         var y = canvas.height-30;
         var dx = 2;
         var dy = -2;
@@ -52,7 +52,7 @@
         function drawBall() {
             ctx.beginPath();
             ctx.arc(x, y, 30, 0, Math.PI*4);
-            if (y > 280) {dy=2;}
+            if (y > 360) {dy=2;}
             ctx.fillStyle = "#0095DD";
             ctx.fill();
             ctx.closePath();
