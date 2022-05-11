@@ -41,6 +41,8 @@
         var ctx = canvas.getContext("2d");
         var x = Math.floor(Math.random() * 650);
         var y = canvas.height-30;
+        var xparab;
+        var yparab;
         var dx = 1;
         var dy = -1;
 
@@ -58,7 +60,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawBall();
             x += dx;
-            y += dy;
+            y = x*x;
         }
 
         setInterval(draw, 10);
