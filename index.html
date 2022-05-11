@@ -48,6 +48,7 @@
             ctx.beginPath();
             ctx.arc(x, y, 30, 0, Math.PI*4);
              if (y < 20) {dy=-dy;}
+            if (x > 670) {dx = 0;}
             ctx.fillStyle = 'blue';
             ctx.fill();
             ctx.closePath();
