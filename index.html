@@ -35,54 +35,10 @@
       <p id="para1">Score:</p> 
        
       <canvas id="myCanvas" width="700" height="395"></canvas>
-      <script>
-        // setup
-        var canvas = document.getElementById("myCanvas");
-        var ctx = canvas.getContext("2d");
-        var x = Math.floor(Math.random() * 650);
-        var y = canvas.height-30;
-        var dx = 1;
-        var dy = -1;
-        var s;
-        
-
-        function drawBall() {
-            ctx.beginPath();
-            ctx.arc(x, y, 30, 0, Math.PI*4);
-            //if (y < 50) {dy=-dy;}
-            //if (x > 650) {dx = 0;}
-            ctx.fillStyle = 'purple';
-            ctx.fill();
-            ctx.closePath();
-        }
-          
-        function sword(){
-            this.swipes = [];
-        }
-        
-        // fade swipe
-        sword.prototype.update = function(){
-            if (this.swipes.length > 0) {
-            }
-        };
-          
-
-        function setup(){
-         s = new Sword();
-        }
-        
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawBall();
-            x += dx;
-            y = x*x + 30;
-            if (mouseIsPressed) {
-               swipes.push(createVector(mouseX, mouseY));
-            } 
-        }
-
-        setInterval(draw, 10);
-       </script>
+      <script type="text/javascript" src="../lib/p5min.js"></script>
+	  <script type="text/javascript" src="FruitNinja.js"></script>
+	  <script type="text/javascript" src="Blade.js"></script>
+	  <script type="text/javascript" src="Fruit.js"></script>
       <h2>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
       </h2>
