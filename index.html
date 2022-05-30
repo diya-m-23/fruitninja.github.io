@@ -49,7 +49,7 @@
             ball.color = Math.floor(Math.random() * 5);
             ball.xmove;
             ball.ymove;
-            ball.sign;
+           // ball.sign;
             console.log("color: " + ball.color);
             balls.push(ball);
         };
@@ -57,7 +57,7 @@
         // update x and y location of the ball
         function moveBall(ball){
             var radius;
-            ball.sign = Math.floor(Math.random() * 2);
+           // ball.sign = Math.floor(Math.random() * 2);
             if (ball.color == 1) { // apple
                 ctx.fillStyle = 'red';
                 radius = 27;
@@ -99,8 +99,9 @@
                 ctx.beginPath();
                 var ball = balls[i];
                 moveBall(ball);
-                if (ball.sign == 1) {ball.xmove *= -1;} // negative direction
-                ball.x += ball.xmove;
+                if (ball.x >=350) {ball.x -= ball.xmove;}
+                else {ball.x += ball.xmove;}
+                
                 ball.y += ball.ymove;
                 ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                 
@@ -114,7 +115,7 @@
            ctx.clearRect(0, 0, canvas.width, canvas.height);
            drawBalls();
         }
-        console.log("laoshi");
+        console.log("sincos");
         setInterval(draw, 10);
 
        </script>
