@@ -63,36 +63,36 @@
             if (ball.color == 1) { // apple
                 ctx.fillStyle = 'red';
                 radius = 27;
-                ball.xmove = 1;
-                ball.ymove = -2;
+              //  ball.xmove = 1;
+                ball.ymove = -1;
             }
             if (ball.color == 2) { // orange
                 ctx.fillStyle = 'orange';
                 radius = 22;
-                ball.xmove = 2;
+              //  ball.xmove = 2;
                 ball.ymove = -2;
             }
             if (ball.color == 3) { // lemon
                 ctx.fillStyle = 'yellow';
                 radius = 20;
-                ball.xmove = 3;
-                ball.ymove = -2;
+              //  ball.xmove = 3;
+                ball.ymove = -3;
             }
             if (ball.color == 4) { // watermelon
                 ctx.fillStyle = 'green';
                 radius = 19;
-                ball.xmove = 4;
-                ball.ymove = -2;
+             //   ball.xmove = 4;
+                ball.ymove = -4;
             }
             if (ball.color == 0) { // passionfruit
                 ctx.fillStyle = 'purple';
                 radius = 15;
-                ball.xmove = 5;
-                ball.ymove = -2;
+            //    ball.xmove = 5;
+                ball.ymove = -5;
             }
             ball.radius = radius;
-           if (saveme >=350) {ball.x -= ball.xmove;}
-                else {ball.x += ball.xmove;}
+          // if (saveme >=350) {ball.x -= ball.xmove;}
+           //     else {ball.x += ball.xmove;}
                 
                 ball.y += ball.ymove;
             
