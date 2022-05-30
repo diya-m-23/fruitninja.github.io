@@ -42,9 +42,11 @@
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         var balls = [];
+        var saveme;
         for (var i=0; i < 10; i++){
             var ball = {};
             ball.x = Math.floor(Math.random() * 250) + 300;
+            saveme = ball.x;
             ball.y = canvas.height - 30;
             ball.color = Math.floor(Math.random() * 5);
             ball.xmove;
@@ -99,7 +101,7 @@
                 ctx.beginPath();
                 var ball = balls[i];
                 moveBall(ball);
-                if (ball.x >=350) {ball.x -= ball.xmove;}
+                if (saveme >=350) {ball.x -= ball.xmove;}
                 else {ball.x += ball.xmove;}
                 
                 ball.y += ball.ymove;
@@ -115,7 +117,7 @@
            ctx.clearRect(0, 0, canvas.width, canvas.height);
            drawBalls();
         }
-        console.log("sincos");
+        console.log("sin");
         setInterval(draw, 10);
 
        </script>
