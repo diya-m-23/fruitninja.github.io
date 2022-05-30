@@ -40,14 +40,12 @@
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         var x = Math.floor(Math.random() * 650);
-        var y = canvas.height-30;
+        var y = Math.floor(Math.random() * 380);
         var dx = 2;
         var dy = -2;
         function drawBall() {
             ctx.beginPath();
             ctx.arc(x, y, 30, 0, Math.PI*4);
-             if (y < 20) {dy=-dy;}
-            if (x > 670) {dx = 0;}
             ctx.fillStyle = 'blue';
             ctx.fill();
             ctx.closePath();
