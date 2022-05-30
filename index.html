@@ -44,6 +44,8 @@
         var ctx = canvas.getContext("2d");
         var balls = [];
         var saveme;
+          
+        function loopy(){
         for (var i=0; i < 5; i++){
             var ball = {};
             ball.x = Math.floor(Math.random() * 620) + 30;
@@ -56,7 +58,9 @@
             console.log("color: " + ball.color);
             balls.push(ball);
         };
-        
+            drawBalls();
+        }
+         
         // update x and y location of the ball
         function moveBall(ball){
             var radius;
@@ -116,11 +120,11 @@
         }
         function draw() {
            ctx.clearRect(0, 0, canvas.width, canvas.height);
-          setInterval(drawBalls, 5000);
-          // drawBalls(); 
+          setInterval(loopy, 5000);
+          
            
         }
-        console.log("apr");
+        console.log("loopdy");
         setInterval(draw, 10);
 
        </script>
