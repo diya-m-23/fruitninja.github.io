@@ -91,7 +91,10 @@
                 ball.ymove = -2;
             }
             ball.radius = radius;
-           
+           if (saveme >=350) {ball.x -= ball.xmove;}
+                else {ball.x += ball.xmove;}
+                
+                ball.y += ball.ymove;
             
         }
           
@@ -101,10 +104,7 @@
                 ctx.beginPath();
                 var ball = balls[i];
                 moveBall(ball);
-                if (saveme >=350) {ball.x -= ball.xmove;}
-                else {ball.x += ball.xmove;}
-                
-                ball.y += ball.ymove;
+               
                 ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                 
                 ctx.fill();
@@ -117,7 +117,7 @@
            ctx.clearRect(0, 0, canvas.width, canvas.height);
            drawBalls();
         }
-        console.log("sin");
+        console.log("palli");
         setInterval(draw, 10);
 
        </script>
