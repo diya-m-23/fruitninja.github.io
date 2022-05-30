@@ -46,7 +46,7 @@
             var ball = {};
             ball.x = Math.floor(Math.random() * 250) + 300;
             ball.y = canvas.height - 30;
-            ball.color = Math.floor(Math.random() * 6);
+            ball.color = Math.floor(Math.random() * 5);
             console.log("color: " + ball.color);
             balls.push(ball);
         };
@@ -81,7 +81,7 @@
                 xmove = 4;
                 ymove = -2;
             }
-            if (ball.color == 5) { // passionfruit
+            if (ball.color == 0) { // passionfruit
                 ctx.fillStyle = 'purple';
                 radius = 15;
                 xmove = 5;
