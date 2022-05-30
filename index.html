@@ -47,6 +47,8 @@
             ball.x = Math.floor(Math.random() * 250) + 300;
             ball.y = canvas.height - 30;
             ball.color = Math.floor(Math.random() * 5);
+            ball.xmove;
+            ball.ymove;
             console.log("color: " + ball.color);
             balls.push(ball);
         };
@@ -54,43 +56,40 @@
         // update x and y location of the ball
         function moveBall(ball){
             var radius;
-            var xmove;
-            var ymove;
             var sign = Math.floor(Math.random() * 2);
             if (ball.color == 1) { // apple
                 ctx.fillStyle = 'red';
                 radius = 40;
-                xmove = 1;
-                ymove = -2;
+                ball.xmove = 1;
+                ball.ymove = -2;
             }
             if (ball.color == 2) { // orange
                 ctx.fillStyle = 'orange';
                 radius = 30;
-                xmove = 2;
-                ymove = -2;
+                ball.xmove = 2;
+                ball.ymove = -2;
             }
             if (ball.color == 3) { // lemon
                 ctx.fillStyle = 'yellow';
                 radius = 25;
-                xmove = 3;
-                ymove = -2;
+                ball.xmove = 3;
+                ball.ymove = -2;
             }
             if (ball.color == 4) { // watermelon
                 ctx.fillStyle = 'green';
                 radius = 20;
-                xmove = 4;
-                ymove = -2;
+                ball.xmove = 4;
+                ball.ymove = -2;
             }
             if (ball.color == 0) { // passionfruit
                 ctx.fillStyle = 'purple';
                 radius = 15;
-                xmove = 5;
-                ymove = -2;
+                ball.xmove = 5;
+                ball.ymove = -2;
             }
             ball.radius = radius;
-            if (sign == 1) {xmove *= -1;} // negative direction
-            ball.x += xmove;
-            ball.y += ymove;
+            if (sign == 1) {ball.xmove *= -1;} // negative direction
+            
         }
           
         function drawBalls() {
@@ -100,6 +99,8 @@
                 var ball = balls[i];
                 moveBall(ball);
                 ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
+                ball.x += ball.xmove;
+                ball.y += ball.ymove;
                 ctx.fill();
                 ctx.closePath();
             }
