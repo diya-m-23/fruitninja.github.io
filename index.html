@@ -41,9 +41,9 @@
         var ctx = canvas.getContext("2d");
         var x = Math.floor(Math.random() * 650);
         var y = Math.floor(Math.random() * 380);
-        var dx = 2;
-        var dy = -2;
-        var color = Math.floor(Math.random() * 5);;
+        var move;
+        var sign = Math.floor(Math.random() * 2);
+        var color = Math.floor(Math.random() * 5);
           
         function drawBall() {
             ctx.beginPath();
@@ -59,8 +59,14 @@
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawBall();
-            x += dx;
-            y += dy;
+            if (color == 1) {move = 0.75;} // apple
+            if (color == 2) {move = 1;} // orange
+            if (color == 3) {move = 1.5;} // lemon
+            if (color == 4) {move = 2;} // watermelon
+            if (color == 5) {move =2;} // passionfruit
+            if (sign == 1) {move *= -1;} // negative changes
+            x += move;
+            y += move;
         }
         setInterval(draw, 10);
        </script>
