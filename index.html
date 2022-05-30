@@ -52,22 +52,32 @@
             if (color == 1) { // apple
                 ctx.fillStyle = 'red';
                 radius = 40;
+                xmove = 1;
+                ymove = -2;
             }
             if (color == 2) { // orange
                 ctx.fillStyle = 'orange';
                 radius = 30;
+                xmove = 2;
+                ymove = -2;
             }
             if (color == 3) { // lemon
                 ctx.fillStyle = 'yellow';
                 radius = 25;
+                xmove = 3;
+                ymove = -2;
             }
             if (color == 4) { // watermelon
                 ctx.fillStyle = 'green';
                 radius = 20;
+                xmove = 4;
+                ymove = -2;
             }
             if (color == 5) { // passionfruit
                 ctx.fillStyle = 'purple';
                 radius = 15;
+                xmove = 5;
+                ymove = -2;
             }
             ctx.arc(x, y, radius, 0, Math.PI*4);
             ctx.fill();
@@ -76,22 +86,7 @@
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
            setInterval(drawBall, 1000);
-            if (color == 1) { // apple
-                xmove = 1;
-                ymove = -2; }
-            if (color == 2) { // orange
-                xmove = 2;
-                ymove = -2; }
-            if (color == 3) { // lemon
-                xmove = 3;
-                ymove = -2; }
-            if (color == 4) { // watermelon
-                xmove = 4;
-                ymove = -2; }
-            if (color == 5) { // passionfruit
-                xmove = 5;
-                ymove = -2; }
-        
+            
             if (sign == 1) {xmove *= -1;} // negative direction
             x += xmove;
             y += ymove;
