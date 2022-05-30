@@ -98,9 +98,10 @@
                 ctx.beginPath();
                 var ball = balls[i];
                 moveBall(ball);
-                ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                 ball.x += ball.xmove;
                 ball.y += ball.ymove;
+                ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
+                
                 ctx.fill();
                 ctx.closePath();
             }
