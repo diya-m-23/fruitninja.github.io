@@ -75,7 +75,7 @@
         }
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (i=0; i < 10; i++) {drawBall();}
+           setInterval(drawBall, 1000);
             if (color == 1) { // apple
                 xmove = 1;
                 ymove = -2; }
@@ -96,7 +96,7 @@
             x += xmove;
             y += ymove;
         }
-        setInterval(draw, 10);
+        setInterval(draw, 1);
        </script>
       <h2>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
