@@ -36,11 +36,13 @@
        
       <canvas id="myCanvas" width="700" height="395"></canvas>
       <script>
+        
+    
         // setup
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         var balls = [];
-        for (int i=0; i < 1; i++){
+        for (var i=0; i < 1; i++){
             var ball = {};
             ball.x = Math.floor(Math.random() * 250) + 300;
             ball.y = canvas.height - 30;
@@ -50,7 +52,7 @@
         };
         
         // update x and y location of the ball
-        function moveBall(var ball){
+        function moveBall(ball){
             var radius;
             var xmove;
             var ymove;
@@ -93,7 +95,7 @@
           
         function drawBalls() {
             ctx.beginPath();
-            for(int i=0; i < balls.length; i++){
+            for(var i=0; i < balls.length; i++){
                 var ball = balls[i];
                 moveBall(ball);
                 ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
@@ -108,6 +110,7 @@
         }
         console.log("oy oy");
         setInterval(draw, 500);
+
        </script>
       <h2>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
