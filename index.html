@@ -81,15 +81,17 @@
             }
             ctx.arc(x, y, radius, 0, Math.PI*4);
             ctx.fill();
+            if (sign == 1) {xmove *= -1;} // negative direction
+            x += xmove;
+            y += ymove;
             ctx.closePath();
         }
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-           setInterval(drawBall, 3);
+           drawBall();
+           drawBall();
             
-            if (sign == 1) {xmove *= -1;} // negative direction
-            x += xmove;
-            y += ymove;
+            
         }
         setInterval(draw, 10);
        </script>
