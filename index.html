@@ -85,13 +85,13 @@
         }
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-           setInterval(drawBall, 1000);
+           setInterval(drawBall, 100);
             
             if (sign == 1) {xmove *= -1;} // negative direction
             x += xmove;
             y += ymove;
         }
-        setInterval(draw, 100);
+        setInterval(draw, 10);
        </script>
       <h2>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
