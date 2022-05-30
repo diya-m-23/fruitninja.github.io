@@ -47,7 +47,7 @@
             ball.x = Math.floor(Math.random() * 250) + 300;
             ball.y = canvas.height - 30;
             ball.color = Math.floor(Math.random() * 6);
-            console.log("color: " + color);
+            console.log("color: " + ball.color);
             balls.push(ball);
         };
         
@@ -108,7 +108,7 @@
            ctx.clearRect(0, 0, canvas.width, canvas.height);
            drawBalls();
         }
-        console.log("oye oye");
+        console.log("oye oye oye");
         setInterval(draw, 10);
 
        </script>
