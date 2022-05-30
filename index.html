@@ -45,15 +45,31 @@
         var ymove;
         var sign = Math.floor(Math.random() * 2);
         var color = Math.floor(Math.random() * 5);
+        var radius;
           
         function drawBall() {
             ctx.beginPath();
-            ctx.arc(x, y, 30, 0, Math.PI*4);
-            if (color == 1) {ctx.fillStyle = 'red';} // apple
-            if (color == 2) {ctx.fillStyle = 'orange';} // orange
-            if (color == 3) {ctx.fillStyle = 'yellow';} // lemon
-            if (color == 4) {ctx.fillStyle = 'green';} // watermelon
-            if (color == 5) {ctx.fillStyle = 'purple';} // passionfruit
+            if (color == 1) { // apple
+                ctx.fillStyle = 'red';
+                radius = 40;
+            }
+            if (color == 2) { // orange
+                ctx.fillStyle = 'orange';
+                radius = 30;
+            }
+            if (color == 3) { // lemon
+                ctx.fillStyle = 'yellow';
+                radius = 25;
+            }
+            if (color == 4) { // watermelon
+                ctx.fillStyle = 'green';
+                radius = 20;
+            }
+            if (color == 5) { // passionfruit
+                ctx.fillStyle = 'purple';
+                radius = 15;
+            }
+            ctx.arc(x, y, radius, 0, Math.PI*4);
             ctx.fill();
             ctx.closePath();
         }
