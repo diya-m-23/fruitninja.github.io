@@ -115,9 +115,9 @@
         }
         function draw() {
            ctx.clearRect(0, 0, canvas.width, canvas.height);
-           drawBalls();
+           set interval(drawBalls, 1000);
         }
-        console.log("do");
+        console.log("draw");
         setInterval(draw, 10);
 
        </script>
