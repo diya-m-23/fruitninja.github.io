@@ -39,16 +39,17 @@
         // setup
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
-        var x = Math.floor(Math.random() * 250) + 300;
-        var y = canvas.height - 30;
-        var xmove;
-        var ymove;
-        var sign = Math.floor(Math.random() * 2);
-        var color = Math.floor(Math.random() * 6);
-        var radius;
+        
           
         function drawBall() {
             ctx.beginPath();
+            var x = Math.floor(Math.random() * 250) + 300;
+            var y = canvas.height - 30;
+            var xmove;
+            var ymove;
+            var sign = Math.floor(Math.random() * 2);
+            var color = Math.floor(Math.random() * 6);
+            var radius;
             if (color == 1) { // apple
                 ctx.fillStyle = 'red';
                 radius = 40;
@@ -91,7 +92,7 @@
            drawBall();
            drawBall();
         }
-        setInterval(draw, 10);
+        setInterval(draw, 500);
        </script>
       <h2>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
