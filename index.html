@@ -39,7 +39,7 @@
         // setup
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
-        var x = Math.floor(Math.random() * 650);
+        var x = Math.floor(Math.random() * 300);
         var y = canvas.height - 30;
         var xmove;
         var ymove;
@@ -61,20 +61,20 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawBall();
             if (color == 1) { // apple
-                xmove = 0.75;
-                ymove = 0.5; }
+                xmove = 1;
+                ymove = 2; }
             if (color == 2) { // orange
-                xmove = 0.1;
-                ymove = 0.75; }
-            if (color == 3) { // lemon
-                xmove = 1.5;
-                ymove = 1; }
-            if (color == 4) { // watermelon
                 xmove = 2;
-                ymove = 1.5; }
-            if (color == 5) { // passionfruit
+                ymove = 2; }
+            if (color == 3) { // lemon
                 xmove = 3;
-                ymove = 2.5; }
+                ymove = 2; }
+            if (color == 4) { // watermelon
+                xmove = 4;
+                ymove = 2; }
+            if (color == 5) { // passionfruit
+                xmove = 5;
+                ymove = 2; }
         
             if (sign == 1) {xmove *= -1;} // negative direction
             x += xmove;
