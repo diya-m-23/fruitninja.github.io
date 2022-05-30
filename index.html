@@ -43,10 +43,16 @@
         var y = Math.floor(Math.random() * 380);
         var dx = 2;
         var dy = -2;
+        var color = Math.floor(Math.random() * 5);;
+          
         function drawBall() {
             ctx.beginPath();
             ctx.arc(x, y, 30, 0, Math.PI*4);
-            ctx.fillStyle = 'blue';
+            if (color == 1) {ctx.fillStyle = 'red';} // apple
+            if (color == 2) {ctx.fillStyle = 'orange';} // orange
+            if (color == 3) {ctx.fillStyle = 'yellow';} // lemon
+            if (color == 4) {ctx.fillStyle = 'green';} // watermelon
+            if (color == 5) {ctx.fillStyle = 'purple';} // passionfruit
             ctx.fill();
             ctx.closePath();
         }
