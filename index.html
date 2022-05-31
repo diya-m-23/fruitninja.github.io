@@ -45,7 +45,7 @@
         var balls = [];
         var saveme;
           
-        function loopy(){
+       
         for (var i=0; i < 1; i++){
             var ball = {};
             ball.x = Math.floor(Math.random() * 620) + 30;
@@ -58,8 +58,8 @@
             console.log("color: " + ball.color);
             balls.push(ball);
         };
-            drawBalls();
-        }
+           // drawBalls();
+        
          
         // update x and y location of the ball
         function moveBall(ball){
@@ -119,12 +119,12 @@
            
         }
         function draw() {
-           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          setInterval(loopy, 1000000);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          drawBalls();
           
            
         }
-        console.log("loopdy");
+        console.log("hi");
         setInterval(draw, 10);
 
        </script>
