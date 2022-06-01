@@ -104,6 +104,10 @@
            //     else {ball.x += ball.xmove;}
                 
                 ball.y += ball.ymove;
+            if (ball.y < 0) {
+                    balls.splice(i,1);
+                    console.log("removed!");
+                }
             
         }
           
@@ -118,10 +122,7 @@
                 ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                 
                 ctx.fill();
-                if (ball.x > 700 || ball.x < 0 && ball.y < 0 || ball.y > 400) {
-                    balls.splice(i,1);
-                    console.log("removed!");
-                }
+                
              
                 ctx.closePath();
             }
@@ -134,7 +135,7 @@
           
            
         }
-        console.log("delet");
+        console.log("dele");
         setInterval(draw, 10);
 
        </script>
