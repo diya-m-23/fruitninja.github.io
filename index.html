@@ -118,11 +118,11 @@
                 
                 ctx.fill();
                 
-                 if (ball.y < 0) {
+                 if (ball.y < 100) {
                     balls.splice(i,1);
-                    balls.push(ball);
-                    moveBall(ball);
-                    console.log("deleted + pushed!");
+                    //balls.push(ball);
+                    //moveBall(ball);
+                    console.log("does this work");
                 } 
                 
                
@@ -139,7 +139,7 @@
           
            
         }
-        console.log("yo");
+        console.log("hi");
         setInterval(draw, 10);
 
        </script>
