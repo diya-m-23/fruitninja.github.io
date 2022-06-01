@@ -41,12 +41,9 @@
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         var balls = [];
-        var saveme;
-          
        
         for (var i=0; i < 3; i++){
             
-           
             var ball = {};
             ball.x = Math.floor(Math.random() * 620) + 30;
             saveme = ball.x;
@@ -54,92 +51,64 @@
             ball.color = Math.floor(Math.random() * 5);
             ball.xmove;
             ball.ymove;
-           // ball.sign;
             console.log("color: " + ball.color);
             balls.push(ball);
-            console.log("I've been pushed");
-        };
+        }
         
-           // drawBalls();
-        
-         
-        // update x and y location of the ball
-        function moveBall(ball){
+        function moveBall(ball){  // update x and y location of the ball
             var radius;
-           // ball.sign = Math.floor(Math.random() * 2);
             if (ball.color == 1) { // apple
                 ctx.fillStyle = 'red';
                 radius = 27;
-              //  ball.xmove = 1;
                 ball.ymove = -2;
-            }
+            } 
             if (ball.color == 2) { // orange
                 ctx.fillStyle = 'orange';
                 radius = 22;
-              //  ball.xmove = 2;
                 ball.ymove = -2.5;
             }
             if (ball.color == 3) { // lemon
                 ctx.fillStyle = 'yellow';
                 radius = 20;
-              //  ball.xmove = 3;
                 ball.ymove = -3;
             }
             if (ball.color == 4) { // watermelon
                 ctx.fillStyle = 'green';
                 radius = 19;
-             //   ball.xmove = 4;
                 ball.ymove = -3.5;
             }
             if (ball.color == 0) { // passionfruit
                 ctx.fillStyle = 'purple';
                 radius = 15;
-            //    ball.xmove = 5;
                 ball.ymove = -4;
             }
-            ball.radius = radius;
-          // if (saveme >=350) {ball.x -= ball.xmove;}
-           //     else {ball.x += ball.xmove;}
-                
-                ball.y += ball.ymove;
-           
             
+            ball.radius = radius;
+            ball.y += ball.ymove;
         }
           
         function drawBalls() {
             
             for(var i=0; i < balls.length; i++){
                 ctx.beginPath();
-                var oddball = balls[i];
-              
-                moveBall(oddball);
-               
-                ctx.arc(oddball.x, oddball.y, oddball.radius, 0, Math.PI*4);
-                
+                var ball = balls[i];
+                moveBall(ball);
+                ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                 ctx.fill();
-                
-                 if (oddball.y < 100) {
-                    //balls.splice(i,1);
+                 if (ball.y < 0) {
+                    balls.splice(i,1);
                     // after deleting, add a new ball with dif properties
-                    balls.splice(i, 1, ball);
-                   
-                    console.log("did i replace?");
+                    console.log("did i splice?");
                 } 
-                
-               
                 ctx.closePath();
             }
-            
-           
         }
+        
         function draw() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          drawBalls();
-          
-           
-          
-           
-        }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawBalls();
+         }
+        
         console.log("try");
         setInterval(draw, 10);
 
