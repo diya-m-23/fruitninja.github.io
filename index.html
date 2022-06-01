@@ -118,7 +118,12 @@
                 
                 ctx.fill();
                 
-                
+                 if (ball.y < 0) {
+                    balls.splice(i,1);
+                    balls.push(ball);
+                    moveBall(ball);
+                    console.log("deleted + pushed!");
+                } 
                 
                
                 ctx.closePath();
@@ -129,17 +134,12 @@
         function draw() {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           drawBalls();
-           if (ball.y < 0) {
-                    balls.splice(i,1);
-                    balls.push(ball);
-                    drawBalls();
-                    console.log("deleted + pushed!");
-                } 
+          
            
           
            
         }
-        console.log("test");
+        console.log("yo");
         setInterval(draw, 10);
 
        </script>
