@@ -46,7 +46,7 @@
         var saveme;
           
        
-        for (var i=0; i < 1; i++){
+        for (var i=0; i < 3; i++){
             
            
             var ball = {};
@@ -123,7 +123,11 @@
                  if (ball.y < 0) {
                     balls.splice(i,1);
                     console.log("deleted!");
-                }
+                } 
+                
+                if (balls.length < 3){
+                balls.push(ball);
+                console.log("pushed at 3");}
                 ctx.closePath();
             }
             
@@ -135,7 +139,7 @@
           
            
         }
-        console.log("idk");
+        console.log("tryme");
         setInterval(draw, 10);
 
        </script>
