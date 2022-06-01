@@ -110,15 +110,15 @@
             
             for(var i=0; i < balls.length; i++){
                 ctx.beginPath();
-                var ball = balls[i];
+                var oddball = balls[i];
               
-                moveBall(ball);
+                moveBall(oddball);
                
-                ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
+                ctx.arc(oddball.x, oddball.y, oddball.radius, 0, Math.PI*4);
                 
                 ctx.fill();
                 
-                 if (ball.y < 100) {
+                 if (oddball.y < 100) {
                     //balls.splice(i,1);
                     // after deleting, add a new ball with dif properties
                     balls.splice(i, 1, ball);
@@ -140,7 +140,7 @@
           
            
         }
-        console.log("blue");
+        console.log("try");
         setInterval(draw, 10);
 
        </script>
