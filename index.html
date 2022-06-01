@@ -119,13 +119,11 @@
                 ctx.fill();
                 
                  if (ball.y < 100) {
-                    balls.splice(i,1);
-                    balls.push(ball);
-                    moveBall(ball);
-                    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
-                
-                    ctx.fill();
-                    console.log("does i work");
+                    //balls.splice(i,1);
+                    // after deleting, add a new ball with dif properties
+                    balls.splice(i, 1, ball);
+                   
+                    console.log("did i replace?");
                 } 
                 
                
@@ -142,7 +140,7 @@
           
            
         }
-        console.log("boo");
+        console.log("blue");
         setInterval(draw, 10);
 
        </script>
