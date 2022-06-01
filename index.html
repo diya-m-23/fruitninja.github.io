@@ -104,10 +104,7 @@
            //     else {ball.x += ball.xmove;}
                 
                 ball.y += ball.ymove;
-            if (ball.y < 0) {
-                    balls.splice(i,1);
-                    console.log("removed!");
-                }
+           
             
         }
           
@@ -123,7 +120,10 @@
                 
                 ctx.fill();
                 
-             
+                 if (ball.y < 0) {
+                    balls.splice(i,1);
+                    console.log("removed!");
+                }
                 ctx.closePath();
             }
             
