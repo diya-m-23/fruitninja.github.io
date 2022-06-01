@@ -48,6 +48,7 @@
        
         for (var i=0; i < 1; i++){
             
+           if (balls == []) {
             var ball = {};
             ball.x = Math.floor(Math.random() * 620) + 30;
             saveme = ball.x;
@@ -60,6 +61,7 @@
             balls.push(ball);
             console.log("I've been pushed");
         };
+        }
            // drawBalls();
         
          
@@ -128,7 +130,7 @@
           
            
         }
-        console.log("deletey");
+        console.log("deleti");
         setInterval(draw, 10);
 
        </script>
