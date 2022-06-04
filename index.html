@@ -47,7 +47,7 @@
            function createBall(){
             var ball = {};
             ball.x = Math.floor(Math.random() * 620) + 30;
-            ball.y = canvas.height - 300;
+            ball.y = canvas.height;
             ball.color = Math.floor(Math.random() * 5);
             ball.xmove;
             ball.ymove;
@@ -102,14 +102,21 @@
                 ctx.beginPath();
                 var ball = balls[i];
                 moveBall(ball);
-                ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
-                ctx.fill();
+                
                  if (ball.y < 0) {
-                    balls.splice(i,1);
-                    // after deleting, add a new ball with dif properties
-                    console.log("ball deleted");
-                } 
+                  //  balls.splice(i,1);
+                    ballsD.push(i);
+                    console.log("ball being deleted");
+                } else{
+                    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
+                ctx.fill();
+                }
                 ctx.closePath();
+            }
+            for (var i=0; i < ballsD.length; i++){
+            balls.splice(i,1);
+            var ball = createBall();
+            balls.push(ball);
             }
         }
         
@@ -118,7 +125,7 @@
             drawBalls();
          }
         
-        console.log("Hello!");
+        console.log("Hello");
         setInterval(draw, 10);
 
        </script>
