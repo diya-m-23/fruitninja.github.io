@@ -33,7 +33,7 @@
       <h1>Fruit Ninja</h1>
       <p id="para4">Tap the fruit before they leave the screen! Watch out: you'll lose a life if you miss one.</p>
       <p id="para1">Score:</p> 
-       
+      <button onclick="level(2)">easy</button>
       <canvas id="myCanvas" width="700" height="395"></canvas>
       <script>
         
@@ -55,14 +55,16 @@
             return ball;
         }
        
-        for (var i=0; i < 3; i++){
-            
+        function level(x){
+        for (var i=0; i < x; i++){
             var ball = createBall();
             balls.push(ball);
         }
+        }
           
+            
        
-        
+     
         function moveBall(ball){  // update x and y location of the ball
             var radius;
             if (ball.color == 1) { // apple
@@ -125,7 +127,7 @@
             drawBalls();
          }
         
-        console.log("Hello");
+        console.log("test");
         setInterval(draw, 10);
 
        </script>
