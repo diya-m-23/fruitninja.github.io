@@ -43,19 +43,25 @@
         var canvas = document.getElementById("myCanvas");
         var ctx = canvas.getContext("2d");
         var balls = [];
-       
-        for (var i=0; i < 3; i++){
-            
+          
+           function createBall(){
             var ball = {};
             ball.x = Math.floor(Math.random() * 620) + 30;
-            saveme = ball.x;
-            ball.y = canvas.height - 30;
+            ball.y = canvas.height - 300;
             ball.color = Math.floor(Math.random() * 5);
             ball.xmove;
             ball.ymove;
             console.log("color: " + ball.color);
+            return ball;
+        }
+       
+        for (var i=0; i < 3; i++){
+            
+            var ball = createBall();
             balls.push(ball);
         }
+          
+       
         
         function moveBall(ball){  // update x and y location of the ball
             var radius;
@@ -91,6 +97,7 @@
           
         function drawBalls() {
             
+            var ballsD =[];
             for(var i=0; i < balls.length; i++){
                 ctx.beginPath();
                 var ball = balls[i];
