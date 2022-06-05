@@ -39,9 +39,11 @@
       <button onclick="level(5)">hard</button>
       <canvas id="myCanvas" width="700" height="395" onclick="showCoords(event)"></canvas>
       <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
         window.onload = function() {
-          var canvas = document.getElementById("myCanvas");
-          var ctx = canvas.getContext("2d");
+         // var canvas = document.getElementById("myCanvas");
+         // var ctx = canvas.getContext("2d");
           var img = document.getElementById("ninja");
           ctx.drawImage(img, canvas.width-30, canvas.height-30);
         }
@@ -220,7 +222,7 @@
             paused = false;
          }
           
-         console.log("Hello, World!");
+         console.log("Hello World!");
          setInterval(draw, 10);
          setInterval(timeMe, 1000); 
 
