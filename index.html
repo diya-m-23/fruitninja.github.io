@@ -56,7 +56,11 @@
         
  
         function timeMe(){
-          timer +=1;}
+          
+           if (paused == true) {
+           timer +=0;}
+           else {timer +=1;}
+        }
           
           function showCoords(event) {
               var e = event;
@@ -228,22 +232,24 @@
          }
           
           function pause(){
-            pause = true;
-            setTimeout(draw);
-            setTimeout(timeMe);
+            paused = true;
           }
           function play(){
-            pause = false;
-            clearTimeout(draw);
-            clearTimeout(timeMe);
+            paused = false;
             }
           function restart(){}
           function gameOver(){}
           
         
-        console.log("timerstyff");
-        if (paused == false) { setInterval(draw, 10);
-        setInterval(timeMe, 1000); }
+        console.log("timerstuff");
+        if (paused == false) {
+            clearTimeout(draw);
+            setInterval(draw, 10);
+        }
+         else if (paused == true) {
+        setTimeout(draw);}
+        
+         setInterval(timeMe, 1000); 
 
        </script>
       <h2>
