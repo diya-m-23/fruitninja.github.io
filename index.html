@@ -56,7 +56,9 @@
         
  
         function timeMe(){
-          timer +=1;
+           if (paused ==false){timer +=1;}
+           else if (paused == true){timer+=0;}
+          
         }
           
           function showCoords(event) {
@@ -230,27 +232,31 @@
           
           function pause(){
             paused = true;
-            console.log(paused);
           }
           
           function play(){
             paused = false;
             }
-          function restart(){
-          console.log("parentheses");}
+          function restart(){}
           function gameOver(){}
           
         
-        console.log("taki");
+          console.log("ayooo");
        
-         setInterval(draw, 10);
+         if (paused == false) {
+             clearTimeout(draw);
+             setInterval(draw, 10);
+         }
+         
+          if (paused == true){
+          setTimeout(draw);}
        
          setInterval(timeMe, 1000); 
 
        </script>
       <h2>
-      <button onclick="pause">pause</button>
-      <button onclick="play">play</button>
+      <button onclick="pause()">pause</button>
+      <button onclick="play()">play</button>
       <button onclick="restart()">restart</button>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
       
