@@ -134,7 +134,11 @@
                 
                 if (ball.y < 0) {
                     ballsD.push(i);
-                    if (ball.tapped == false) {lifeCount-=1;}
+                    if (ball.tapped == false) {
+                        lifeCount-=1;
+                        var endaudio = new Audio('endaudio.wav');
+                        endaudio.play();
+                    }
                 } else {
                     if (ball.tapped == true) {ctx.fillStyle = 'black';}
                     ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
@@ -194,14 +198,10 @@
             }
             
             ctx.fillText("Score: " + scoreCount, 10, 18);
-            ctx.fillText("Lives: " + lifeCount, 630, 18);
+            ctx.fillText("Lives: " + lifeCount, 623, 18);
             if (lifeCount <= 0) {
                 paused = true;
                 balls = [];
-                if (lifeCount == 0) {
-                    var endaudio = new Audio('endaudio.wav');
-                    endaudio.play();
-                }
                 ctx.font = "60px Monospace";
                 ctx.fillStyle = 'red';
                 ctx.fillText("GAME OVER", 160, 150);
