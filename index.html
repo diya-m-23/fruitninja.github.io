@@ -198,6 +198,8 @@
             if (lifeCount <= 0) {
                 paused = true;
                 balls = [];
+                var endaudio = new Audio('endaudio.mp3');
+                endaudio.play();
                 ctx.font = "60px Arial";
                 ctx.fillStyle = 'red';
                 ctx.fillText("GAME OVER", 150, 150);
