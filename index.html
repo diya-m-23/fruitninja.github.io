@@ -135,6 +135,7 @@
             ctx.fillStyle = 'black';
             if (timer < 10){
                 ctx.fillText("Time: 00:0" + timer, 10, 385);
+            }
             else if (timer >= 10 && timer < 60){
                 ctx.fillText("Time: 00:" + timer, 10, 385);
             } else if (timer >=60){
@@ -146,7 +147,7 @@
          }
           
         
-        console.log("god");
+        console.log("tryme");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
