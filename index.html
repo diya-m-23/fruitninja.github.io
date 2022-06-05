@@ -36,7 +36,7 @@
       <button onclick="level(2)">easy</button>
       <button onclick="level(1)">medium</button>
       <button onclick="level(2)">hard</button>
-      <canvas id="myCanvas" width="700" height="395"></canvas>
+      <canvas id="myCanvas" width="700" height="395" onclick="showCoords(event)"></canvas>
       <script>
         
         // To do: make balls reappear after they vanish, make them tappable; set up score, difficulty level, lives, & timer; set up score guide
@@ -57,6 +57,19 @@
         
           function timeMe(){
           timer +=1;}
+          
+          function showCoords(event) {
+              var e = event;
+              var x = event.clientX;
+              var y = event.clientY;
+              var coords = "X coords: " + x + ", Y coords: " + y;
+              var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
+    var canvasX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
+    var canvasY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
+               var coords2 = "X coords: " + canvasX + ", Y coords: " + canvasY;
+              console.log(coords);
+              console.log(coords2);
+            }
           
            function createBall(){
             var ball = {};
@@ -175,7 +188,7 @@
          }
           
         
-        console.log("filly");
+        console.log("try");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
