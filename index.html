@@ -133,10 +133,12 @@
             drawBalls();
             ctx.font = "15px Arial";
             ctx.fillStyle = 'black';
-            if (timer < 60){
+            if (timer < 10){
+                ctx.fillText("Time: 00:0" + timer, 10, 385);
+            else if (timer >= 10 && timer < 60){
                 ctx.fillText("Time: 00:" + timer, 10, 385);
-            } else {
-                var min = timer/60;
+            } else if (timer >=60){
+                var min = Math.floor(timer/60);
                 var sec = timer%60;
                 ctx.fillText("Time: " + min + ":" + sec, 10, 385);
             }
