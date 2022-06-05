@@ -49,6 +49,7 @@
         var mouseX;
         var mouseY;
         var scoreCount=0;
+        boolean tapped;
  
         function timeMe(){
           timer +=1;}
@@ -68,8 +69,10 @@
                   if (tap(mouseX, mouseY, balls[i])){
                       score(balls[i]);
                       console.log("score: " + scoreCount);
+                      ctx.fillStyle= 'black';
                       
                   }
+                  else {tapped = false;}
               }
               
             }
