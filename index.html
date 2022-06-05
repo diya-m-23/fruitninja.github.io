@@ -230,14 +230,15 @@
             ctx.fillText("Score: " + scoreCount, 10, 18);
             ctx.fillText("Lives: " + lifeCount, 630, 18);
             if (lifeCount <= 0) {
+                paused = true;
                 balls = [];
                 ctx.font = "60px Arial";
                 ctx.fillStyle = 'red';
-                ctx.fillText("GAME OVER", 300, 300);
+                ctx.fillText("GAME OVER", 150, 150);
                 ctx.font = "30px Arial";
                 ctx.fillStyle = 'black';
-                ctx.fillText("Score: " + scoreCount, 320, 400);
-                ctx.fillText("Click restarth to play again!", 320, 500);
+                ctx.fillText("Score: " + scoreCount, 175, 225);
+                ctx.fillText("Click restarth to play again!", 175, 300);
             }
             
             
@@ -254,7 +255,7 @@
           function gameOver(){}
           
         
-          console.log("ok");
+          console.log("b");
       
           setInterval(draw, 10);
         
