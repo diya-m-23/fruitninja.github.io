@@ -50,6 +50,7 @@
         var mouseY;
         var scoreCount=0;
         var lifeCount=10;
+        let paused = false;
        
         
         
@@ -227,21 +228,27 @@
          }
           
           function pause(){
-   
+            pause = true;
+            setTimeout(draw);
+            setTimeout(timeMe);
           }
-          function play(){}
+          function play(){
+            pause = false;
+            clearTimeout(draw);
+            clearTimeout(timeMe);
+            }
           function restart(){}
           function gameOver(){}
           
         
-        console.log("rand");
-        setInterval(draw, 10);
-        setInterval(timeMe, 1000);
+        console.log("timerstyff");
+        if (paused == false) { setInterval(draw, 10);
+        setInterval(timeMe, 1000); }
 
        </script>
       <h2>
-      <button onclick="pause()">pause</button>
-      <button onclick="play()">play</button>
+      <button onclick="pause">pause</button>
+      <button onclick="play">play</button>
       <button onclick="restart()">restart</button>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
       
