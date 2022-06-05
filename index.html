@@ -47,13 +47,13 @@
         var balls = [];
         var timer = 0;
           
-        canvas.addEventListener("mousemove", function(e) { 
+     /*   canvas.addEventListener("mousemove", function(e) { 
     var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
     var canvasX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
     var canvasY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
    // ctx.clearRect(0, 0, canvas.width, canvas.height);  // (0,0) the top left of the canvas
     //ctx.fillText("X: "+canvasX+", Y: "+canvasY, 10, 20);
-});
+}); */
         
           function timeMe(){
           timer +=1;}
@@ -127,7 +127,7 @@
                 } else{
                 ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                 ctx.fill();
-                swipe();
+               // swipe();
                 }
                 ctx.closePath();
             }
@@ -138,10 +138,10 @@
             }
         }
           
-        function swipe(){
+        /*function swipe(){
         if (canvasX > 200){
         console.log("passed 200");}
-        }
+        } */
         
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -166,7 +166,7 @@
          }
           
         
-        console.log("sheesh");
+        console.log("sheal");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
