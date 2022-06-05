@@ -33,9 +33,9 @@
       <h1>Fruit Ninja</h1>
       <p id="para4">Tap the fruit before they leave the screen! Watch out, you'll lose a life if you miss one. When you run out of lives, it's game over. (Tip: play on a touchscreen device.)</p>
       <p id="para1">Difficulty Level:</p> 
-      <button onclick="level(3)">easy</button>
+      <div style="text-align:center"><button onclick="level(3)">easy</button>
       <button onclick="level(4)">medium</button>
-      <button onclick="level(5)">hard</button>
+      <button onclick="level(5)">hard</button> </div>
       <canvas id="myCanvas" width="700" height="395" onclick="showCoords(event)"></canvas>
       <script>
         var canvas = document.getElementById("myCanvas");
