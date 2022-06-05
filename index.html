@@ -68,6 +68,8 @@
                   score(balls[i]);
                   console.log("score: " + scoreCount);
                   balls[i].tapped = true;
+                  var audio = new Audio('audio.mp3');
+                  audio.play();
               } else {tapped = false;}
           }
          }
