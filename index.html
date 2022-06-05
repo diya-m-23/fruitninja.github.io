@@ -63,6 +63,12 @@
               // var coords2 = "X coords: " + canvasX + ", Y coords: " + canvasY;
               //console.log(coords);
               //console.log(coords2);
+              for(var i=0; i < balls.length; i++){
+                  if (tap(mouseX, mouseY, balls[i])){
+                      console.log("in bounds" + i);
+                  }
+              }
+              
             }
           
        function createBall(){
@@ -145,20 +151,21 @@
         console.log("passed 200");}
         } */
         
-        function tap(){
+        function tap(mouseX, mouseY, ball){
           var asq = (mouseX-ball.x) * (mouseX-ball.x);
           var bsq = (mouseY-ball.y) * (mouseX-ball.y);
           var csq = ball.radius * ball.radius;
           if (asq + bsq <= csq){
-            console.log("in bounds");
-          } 
+              return true;
+            //console.log("in bounds");
+          } else {return false;}
         }
               
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
            
             drawBalls();
-            tap();
+           
             
            /*  ctx.fillStyle = 'black';
             ctx.fill();
@@ -185,7 +192,7 @@
          }
           
         
-        console.log("run!");
+        console.log("run");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
