@@ -133,11 +133,18 @@
             drawBalls();
             ctx.font = "15px Arial";
             ctx.fillStyle = 'black';
-            ctx.fillText(timer + " seconds", 10, 30);
+            if (timer < 60){
+                ctx.fillText("Time: 00:" + timer, 10, 30);
+            } else {
+                var min = timer/60;
+                var sec = timer%60;
+                ctx.fillText("Time: " + min + ":" + sec, 10, 30);
+            }
+            
          }
           
         
-        console.log("bronk");
+        console.log("brol");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
