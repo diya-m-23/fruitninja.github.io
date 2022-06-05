@@ -48,16 +48,8 @@
         var timer = 0;
         var mouseX;
         var mouseY;
-          
-     /*   canvas.addEventListener("mousemove", function(e) { 
-    var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
-    var canvasX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
-    var canvasY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
-   // ctx.clearRect(0, 0, canvas.width, canvas.height);  // (0,0) the top left of the canvas
-    //ctx.fillText("X: "+canvasX+", Y: "+canvasY, 10, 20);
-}); */
-        
-          function timeMe(){
+ 
+        function timeMe(){
           timer +=1;}
           
           function showCoords(event) {
@@ -66,14 +58,14 @@
               var y = event.clientY;
              // var coords = "X coords: " + x + ", Y coords: " + y;
               var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
-    var mouseX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
-    var mouseY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
+              var mouseX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
+              var mouseY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
               // var coords2 = "X coords: " + canvasX + ", Y coords: " + canvasY;
               //console.log(coords);
               //console.log(coords2);
             }
           
-           function createBall(){
+       function createBall(){
             var ball = {};
             ball.x = Math.floor(Math.random() * 620) + 30;
             ball.y = canvas.height;
@@ -85,15 +77,12 @@
         }
        
         function level(x){
-        for (var i=0; i < x; i++){
-            var ball = createBall();
-            balls.push(ball);
-        }
+            for (var i=0; i < x; i++){
+                var ball = createBall();
+                balls.push(ball);
+            }
         }
           
-          
-       
-     
         function moveBall(ball){  // update x and y location of the ball
             var radius;
             if (ball.color == 1) { // apple
@@ -134,15 +123,13 @@
                 var ball = balls[i];
                 moveBall(ball);
                 
-                
-                 if (ball.y < 0) {
-                  //  balls.splice(i,1);
+                if (ball.y < 0) {
                     ballsD.push(i);
                     console.log("ball being deleted");
                 } else{
-                ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
-                ctx.fill();
-               // swipe();
+                    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
+                    ctx.fill();
+                   // swipe();
                 }
                 ctx.closePath();
             }
@@ -162,9 +149,10 @@
           var asq = (mouseX-ball.x) * (mouseX-ball.x);
           var bsq = (mouseY-ball.y) * (mouseX-ball.y);
           var csq = ball.radius * ball.radius;
-        if (asq + bsq <= csq){
+          if (asq + bsq <= csq){
             console.log("in bounds");
-        } }
+          } 
+        }
               
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -205,6 +193,5 @@
       <h2>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
       </h2>
-
      </body>
 </html>
