@@ -56,10 +56,7 @@
         
  
         function timeMe(){
-          
-           if (paused == true) {
-           timer +=0;}
-           else {timer +=1;}
+          timer +=1;
         }
           
           function showCoords(event) {
@@ -233,7 +230,9 @@
           
           function pause(){
             paused = true;
+            console.log(paused);
           }
+          
           function play(){
             paused = false;
             }
@@ -241,14 +240,10 @@
           function gameOver(){}
           
         
-        console.log("timerstuff");
-        if (paused == false) {
-            clearTimeout(draw);
-            setInterval(draw, 10);
-        }
-         else if (paused == true) {
-        setTimeout(draw);}
-        
+        console.log("uh");
+       
+         setInterval(draw, 10);
+       
          setInterval(timeMe, 1000); 
 
        </script>
