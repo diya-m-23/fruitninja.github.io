@@ -195,11 +195,12 @@
             ctx.fillText("Score: " + scoreCount, 10, 18);
             ctx.fillText("Lives: " + lifeCount, 630, 18);
             if (lifeCount <= 0) {
-                lifeCount -= 0;
                 paused = true;
                 balls = [];
-                var endaudio = new Audio('endaudio.wav');
-                endaudio.play();
+                if (lifeCount == 0) {
+                    var endaudio = new Audio('endaudio.wav');
+                    endaudio.play();
+                }
                 ctx.font = "60px Arial";
                 ctx.fillStyle = 'red';
                 ctx.fillText("GAME OVER", 150, 150);
