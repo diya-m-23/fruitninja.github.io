@@ -106,6 +106,7 @@
           
         function moveBall(ball){  // update x and y location of the ball
             var radius;
+            
             if (ball.color == 1) { // apple
                 ctx.fillStyle = 'red';
                 radius = 27;
@@ -133,7 +134,8 @@
             }
             
             ball.radius = radius;
-            ball.y += ball.ymove;
+            if (paused == false){ball.y += ball.ymove;}
+            if (paused == true){ball.y += 0;}
         }
           
         function drawBalls() {
@@ -241,16 +243,10 @@
           function gameOver(){}
           
         
-          console.log("ayooo");
-       
-         if (paused == false) {
-             clearTimeout(draw);
-             setInterval(draw, 10);
-         }
-         
-          if (paused == true){
-          setTimeout(draw);}
-       
+          console.log("yu");
+      
+          setInterval(draw, 10);
+        
          setInterval(timeMe, 1000); 
 
        </script>
