@@ -179,7 +179,7 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawBalls();
 
-            ctx.font = "15px Arial";
+            ctx.font = "15px Monospace";
             ctx.fillStyle = 'black';
             if (timer < 10){
                 ctx.fillText("Time: 00:0" + timer, 10, 385);
@@ -202,10 +202,10 @@
                     var endaudio = new Audio('endaudio.wav');
                     endaudio.play();
                 }
-                ctx.font = "60px Arial";
+                ctx.font = "60px Monospace";
                 ctx.fillStyle = 'red';
                 ctx.fillText("GAME OVER", 160, 150);
-                ctx.font = "30px Arial";
+                ctx.font = "30px Monospace";
                 ctx.fillStyle = 'black';
                 ctx.fillText("Score: " + scoreCount, 175, 225);
                 ctx.fillText("Click restart to play again!", 175, 300);
