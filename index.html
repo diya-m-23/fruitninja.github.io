@@ -31,10 +31,10 @@
    
     <body>
       <h1>Fruit Ninja</h1>
-      <p id="para4">Tap the fruit before they leave the screen! Watch out, you'll lose a life if you miss one. When you run out of lives, its game over. (Tip: play on a touchscreen device.)</p>
+      <p id="para4">Tap the fruit before they leave the screen! Watch out, you'll lose a life if you miss one. When you run out of lives, it's game over. (Tip: play on a touchscreen device.)</p>
       <p id="para1">Difficulty Level:</p> 
-      <button onclick="level(2)">easy</button>
-      <button onclick="level(3)">medium</button>
+      <button onclick="level(3)">easy</button>
+      <button onclick="level(4)">medium</button>
       <button onclick="level(5)">hard</button>
       <canvas id="myCanvas" width="700" height="395" onclick="showCoords(event)"></canvas>
       <script>
@@ -229,7 +229,15 @@
             }
             ctx.fillText("Score: " + scoreCount, 10, 18);
             ctx.fillText("Lives: " + lifeCount, 630, 18);
-            if (lifeCount < 0) {
+            if (lifeCount <= 0) {
+                balls = [];
+                ctx.font = "60px Arial";
+                ctx.fillStyle = 'red';
+                ctx.fillText("GAME OVER", 300, 300);
+                ctx.font = "30px Arial";
+                ctx.fillStyle = 'black';
+                ctx.fillText("Score: " + scoreCount, 320, 400);
+                ctx.fillText("Click restarth to play again!", 320, 500);
             }
             
             
@@ -246,7 +254,7 @@
           function gameOver(){}
           
         
-          console.log("quickfix");
+          console.log("ok");
       
           setInterval(draw, 10);
         
