@@ -148,13 +148,16 @@
             } else if (timer >=60){
                 var min = Math.floor(timer/60);
                 var sec = timer%60;
-                ctx.fillText("Time: " + min + ":" + sec, 10, 385);
+                    if (sec < 10) {
+                        ctx.fillText("Time: " + min + ":0" + sec, 10, 385);
+                    } else {ctx.fillText("Time: " + min + ":" + sec, 10, 385);
+                    }
             }
             
          }
           
         
-        console.log("tryme");
+        console.log("test");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
