@@ -50,7 +50,7 @@
         var mouseY;
         var scoreCount=0;
         var lifeCount=10;
-        let pause = false;
+       
         
         
  
@@ -227,22 +227,22 @@
          }
           
           function pause(){
-              pause = true;
+   
           }
           function play(){}
           function restart(){}
           function gameOver(){}
           
         
-        console.log("rung");
+        console.log("rand");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
        </script>
       <h2>
-      <button onclick="level(2)">pause</button>
-      <button onclick="level(2)">play</button>
-      <button onclick="level(2)">restart</button>
+      <button onclick="pause()">pause</button>
+      <button onclick="play()">play</button>
+      <button onclick="restart()">restart</button>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
       
       </h2>
