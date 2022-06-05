@@ -150,7 +150,8 @@
                 var sec = timer%60;
                     if (sec < 10) {
                         ctx.fillText("Time: " + min + ":0" + sec, 10, 385);
-                    } else {ctx.fillText("Time: " + min + ":" + sec, 10, 385);
+                    } else if (sec == 0) {ctx.fillText("Time: " + min + ":00" + sec, 10, 385);}
+                else {ctx.fillText("Time: " + min + ":" + sec, 10, 385);
                     }
             }
             
