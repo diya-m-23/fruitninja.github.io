@@ -49,6 +49,7 @@
         var mouseX;
         var mouseY;
         var scoreCount=0;
+        var lifeCount=3;
         
  
         function timeMe(){
@@ -139,6 +140,9 @@
                 
                 if (ball.y < 0) {
                     ballsD.push(i);
+                    if (ball.tapped == false){
+                    lifeCount-=1;
+                    console.log("lifeCount: "+lifeCount);}
                    // console.log("ball being deleted");
                 } else{
                     if (ball.tapped == true) {
@@ -219,10 +223,11 @@
             ctx.rect(625, 10, 5, 5)
             ctx.fill();
             
+            
          }
           
         
-        console.log("runo");
+        console.log("runa");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
