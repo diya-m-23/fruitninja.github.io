@@ -46,6 +46,8 @@
         var ctx = canvas.getContext("2d");
         var balls = [];
         var timer = 0;
+        var mouseX;
+        var mouseY;
           
      /*   canvas.addEventListener("mousemove", function(e) { 
     var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
@@ -62,13 +64,13 @@
               var e = event;
               var x = event.clientX;
               var y = event.clientY;
-              var coords = "X coords: " + x + ", Y coords: " + y;
+             // var coords = "X coords: " + x + ", Y coords: " + y;
               var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
-    var canvasX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
-    var canvasY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
-               var coords2 = "X coords: " + canvasX + ", Y coords: " + canvasY;
-              console.log(coords);
-              console.log(coords2);
+    var mouseX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
+    var mouseY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
+              // var coords2 = "X coords: " + canvasX + ", Y coords: " + canvasY;
+              //console.log(coords);
+              //console.log(coords2);
             }
           
            function createBall(){
@@ -89,7 +91,7 @@
         }
         }
           
-            
+          
        
      
         function moveBall(ball){  // update x and y location of the ball
@@ -156,12 +158,19 @@
         console.log("passed 200");}
         } */
         
-     
+        function tap(){
+          var asq = (mouseX-ball.x) * (mouseX-ball.x);
+          var bsq = (mouseY-ball.y) * (mouseX-ball.y);
+          var csq = ball.radius * ball.radius;
+        if (asq + bsq <= csq){
+            console.log("in bounds");
+        }
               
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
            
             drawBalls();
+            tap();
             
            /*  ctx.fillStyle = 'black';
             ctx.fill();
@@ -188,7 +197,7 @@
          }
           
         
-        console.log("try");
+        console.log("run?");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
