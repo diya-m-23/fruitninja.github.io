@@ -48,7 +48,6 @@
         var scoreCount=0;
         var lifeCount=10;
         let paused = false;
-        let playend = false;
        
         function timeMe(){
            if (paused == false){timer+=1;}
@@ -199,7 +198,6 @@
             ctx.fillText("Lives: " + lifeCount, 620, 18);
             if (lifeCount <= 0) {
                 paused = true;
-                playend = true;
                 balls = [];
                 ctx.font = "60px Monospace";
                 ctx.fillStyle = 'red';
@@ -209,11 +207,6 @@
                 ctx.fillText("Score: " + scoreCount, 145, 225);
                 ctx.fillText("Click restart to play again!", 145, 300);
             }
-            
-           if (playend == true){
-               var endaudio = new Audio('endaudio.wav');
-               endaudio.play();
-           }
          } // end draw
           
          function pause(){
