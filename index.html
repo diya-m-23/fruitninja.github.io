@@ -51,7 +51,7 @@
     var cRect = canvas.getBoundingClientRect();        // Gets CSS pos, and width/height
     var canvasX = Math.round(e.clientX - cRect.left);  // Subtract the 'left' of the canvas 
     var canvasY = Math.round(e.clientY - cRect.top);   // from the X/Y positions to make  
-    ctx.clearRect(0, 0, canvas.width, canvas.height);  // (0,0) the top left of the canvas
+   // ctx.clearRect(0, 0, canvas.width, canvas.height);  // (0,0) the top left of the canvas
     //ctx.fillText("X: "+canvasX+", Y: "+canvasY, 10, 20);
 });
         
@@ -139,8 +139,8 @@
         }
           
         function swipe(){
-        //if (ball.onmouseover == true){
-        //console.log("moved over");}
+        if (canvasX > 200){
+        console.log("passed 200");}
         }
         
         function draw() {
@@ -166,7 +166,7 @@
          }
           
         
-        console.log("shew");
+        console.log("sheesh");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
