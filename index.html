@@ -111,13 +111,15 @@
                 var ball = balls[i];
                 moveBall(ball);
                 
+                
                  if (ball.y < 0) {
                   //  balls.splice(i,1);
                     ballsD.push(i);
                     console.log("ball being deleted");
                 } else{
-                    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
+                ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                 ctx.fill();
+                swipe();
                 }
                 ctx.closePath();
             }
@@ -126,6 +128,11 @@
             var ball = createBall();
             balls.push(ball);
             }
+        }
+          
+        function swipe(){
+        if (ball.onmouseover == true){
+        console.log("moved over");}
         }
         
         function draw() {
