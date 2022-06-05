@@ -173,6 +173,9 @@
         }
           
         function score(ball){
+            if (ball.tapped == true) {
+            scoreCount +=0;}
+            else if {
             if (ball.color == 1){
             scoreCount+=10; }
             if (ball.color ==2){
@@ -182,7 +185,7 @@
             if(ball.color == 4){
             scoreCount+=40;}
             if(ball.color ==5){
-            scoreCount+=50;}
+            scoreCount+=50;}}
         }
               
         function draw() {
@@ -217,7 +220,7 @@
          }
           
         
-        console.log("run?");
+        console.log("runl");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
