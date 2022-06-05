@@ -173,7 +173,7 @@
         
         function tap(mouseX, mouseY, ball){
           var asq = (mouseX-ball.x) * (mouseX-ball.x);
-          var bsq = (mouseY-ball.y) * (mouseX-ball.y);
+          var bsq = (mouseY-ball.y) * (mouseY-ball.y);
           var csq = ball.radius * ball.radius;
           if (asq + bsq <= csq){
               return true;
@@ -243,7 +243,7 @@
           function gameOver(){}
           
         
-          console.log("yu");
+          console.log("oh");
       
           setInterval(draw, 10);
         
