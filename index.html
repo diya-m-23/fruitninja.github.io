@@ -49,7 +49,9 @@
         var mouseX;
         var mouseY;
         var scoreCount=0;
-        var lifeCount=3;
+        var lifeCount=10;
+        let pause = false;
+        
         
  
         function timeMe(){
@@ -217,11 +219,19 @@
                     }
             }
             ctx.fillText("Score: " + scoreCount, 10, 18);
-            ctx.fillText("Lives: " + lifeCount, 620, 18);
-           
+            ctx.fillText("Lives: " + lifeCount, 650, 18);
+            if (lifeCount < 0) {
+            }
             
             
          }
+          
+          function pause(){
+              pause = true;
+          }
+          function play(){}
+          function restart(){}
+          function gameOver(){}
           
         
         console.log("rung");
@@ -230,7 +240,11 @@
 
        </script>
       <h2>
+      <button onclick="level(2)">pause</button>
+      <button onclick="level(2)">play</button>
+      <button onclick="level(2)">restart</button>
        <img src="https://www.clipartmax.com/png/middle/221-2216315_ninja-ninja-icon.png" width="10%">
+      
       </h2>
      </body>
 </html>
