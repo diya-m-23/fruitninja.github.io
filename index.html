@@ -49,7 +49,7 @@
         var mouseX;
         var mouseY;
         var scoreCount=0;
-        let tapped = false;
+        
  
         function timeMe(){
           timer +=1;}
@@ -69,7 +69,7 @@
                   if (tap(mouseX, mouseY, balls[i])){
                       score(balls[i]);
                       console.log("score: " + scoreCount);
-                      tapped = true;
+                      balls[i].tapped = true;
                      
                       
                   }
@@ -80,6 +80,7 @@
           
        function createBall(){
             var ball = {};
+            ball.tapped = false;
             ball.x = Math.floor(Math.random() * 620) + 30;
             ball.y = canvas.height;
             ball.color = Math.floor(Math.random() * 5);
@@ -140,7 +141,7 @@
                     ballsD.push(i);
                    // console.log("ball being deleted");
                 } else{
-                    if (tapped == true) {
+                    if (ball.tapped == true) {
                     ctx.fillStyle = 'black';}
                     ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                     
@@ -216,7 +217,7 @@
          }
           
         
-        console.log("runk");
+        console.log("run?");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
