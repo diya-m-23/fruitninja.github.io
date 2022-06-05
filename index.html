@@ -147,9 +147,13 @@
               
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+           
             drawBalls();
             ctx.font = "15px Arial";
             ctx.fillStyle = 'black';
+            ctx.arc(670, 10, 15, 0, Math.PI*4);
+            ctx.fillStyle = 'pink';
+            ctx.fill();
             if (timer < 10){
                 ctx.fillText("Time: 00:0" + timer, 10, 385);
             }
@@ -168,7 +172,7 @@
          }
           
         
-        console.log("sheal");
+        console.log("fill");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
