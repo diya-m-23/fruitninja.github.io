@@ -107,22 +107,22 @@
             if (ball.color == 2) { // orange
                 ctx.fillStyle = 'orange';
                 radius = 22;
-                ball.ymove = -1;
+                ball.ymove = -0.75;
             }
             if (ball.color == 3) { // lemon
                 ctx.fillStyle = 'yellow';
                 radius = 20;
-                ball.ymove = -1.5;
+                ball.ymove = -1;
             }
             if (ball.color == 4) { // watermelon
                 ctx.fillStyle = 'green';
                 radius = 19;
-                ball.ymove = -2;
+                ball.ymove = -1.25;
             }
             if (ball.color == 0) { // passionfruit
                 ctx.fillStyle = 'purple';
                 radius = 15;
-                ball.ymove = -2.5;
+                ball.ymove = -1.5;
             }
             
             ball.radius = radius;
@@ -218,7 +218,7 @@
          }
           
         
-        console.log("runo");
+        console.log("runp");
         setInterval(draw, 10);
         setInterval(timeMe, 1000);
 
