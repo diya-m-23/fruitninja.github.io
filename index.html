@@ -44,28 +44,28 @@
         var lifeCount=10;
         let paused = false;
        
-        function timeMe(){
+        function timeMe(){ // adds increments for timer
            if (paused == false){timer+=1;}
            else if (paused == true){timer+=0;}
         }
           
-        function showCoords(event) {
+        function showCoords(event) { // identifies mouse position
           var e = event;
           var x = event.clientX;
           var y = event.clientY;
           var cRect = canvas.getBoundingClientRect();
           var mouseX = Math.round(e.clientX - cRect.left);
           var mouseY = Math.round(e.clientY - cRect.top);
-          for(var i=0; i < balls.length; i++){
+          for(var i=0; i < balls.length; i++){ // adds score if player taps ball
               if (tap(mouseX, mouseY, balls[i])){
                   score(balls[i]);
-                  console.log("score: " + scoreCount);
+                  // console.log("score: " + scoreCount);
                   balls[i].tapped = true;
               } else {tapped = false;}
           }
          }
           
-         function createBall(){
+         function createBall(){ // creates ball object
             var ball = {};
             ball.tapped = false;
             ball.x = Math.floor(Math.random() * 620) + 30;
@@ -76,7 +76,7 @@
             return ball;
         }
        
-        function level(x){
+        function level(x){ // pushes in x amount of balls depending on difficulty level
             balls = [];
             for (var i=0; i < x; i++){
                 var ball = createBall();
@@ -84,7 +84,7 @@
             }
         }
           
-        function moveBall(ball){  // update x and y location of the ball
+        function moveBall(ball){  // sets ball color and size, updates y position of ball
             var radius;
             
             if (ball.color == 1) { // apple
@@ -118,32 +118,32 @@
             if (paused == true){ball.y += 0;}
         }
           
-        function drawBalls() {
+        function drawBalls() { // draws the balls
             var ballsD =[];
             for(var i=0; i < balls.length; i++){
                 ctx.beginPath();
                 var ball = balls[i];
                 moveBall(ball);
                 
-                if (ball.y < 0) {
+                if (ball.y < 0) { 
                     ballsD.push(i);
-                    if (ball.tapped == false) {lifeCount-=1;}
+                    if (ball.tapped == false) {lifeCount-=1;} // lose a life if player didn't catch ball
                 } else {
-                    if (ball.tapped == true) {ctx.fillStyle = 'black';}
+                    if (ball.tapped == true) {ctx.fillStyle = 'black';} // turn ball black if player caught it
                     ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*4);
                     ctx.fill();
                 }
                 ctx.closePath();
             }
             
-            for (var i=0; i < ballsD.length; i++){
+            for (var i=0; i < ballsD.length; i++){ // delete and replace out-of-bounds balls
                 balls.splice(i,1);
                 var ball = createBall();
                 balls.push(ball);
             }
         }
           
-        function tap(mouseX, mouseY, ball){
+        function tap(mouseX, mouseY, ball){ // signals if ball was tapped
           var asq = (mouseX-ball.x) * (mouseX-ball.x);
           var bsq = (mouseY-ball.y) * (mouseY-ball.y);
           var csq = ball.radius * ball.radius;
@@ -152,7 +152,7 @@
           } else {return false;}
         } // end drawBalls
           
-        function score(ball){
+        function score(ball){ // scores balls based on fruit type
             if (ball.tapped == true) {
             scoreCount +=0;}
             else {
@@ -174,7 +174,8 @@
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawBalls();
-
+            
+            // on-screen text stuff
             ctx.font = "15px Monospace";
             ctx.fillStyle = 'black';
             if (timer < 10){
